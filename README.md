@@ -23,37 +23,21 @@
    ```bash
    git clone https://github.com/nvdskhch/TravelSurvey.git
    cd TravelSurvey
-Настрой PATH для MinGW:
-bash
-
-
-
-
-export PATH=$PATH:C:\Qt\Tools\mingw1310_64\bin
-Собери проект:
-bash
-
-
-
-
-mkdir build
-cd build
-cmake .. -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=C:\Qt\6.9.0\mingw_64
-cmake --build .
-Разверни зависимости Qt:
-bash
-
-
-
-
-C:\Qt\6.9.0\mingw_64\bin\windeployqt.exe bin\appTravelSurvey.exe
-Запусти:
-bash
-
-
-
-
-bin\appTravelSurvey.exe
+2. Настрой PATH для MinGW:
+   ```bash
+   export PATH=$PATH:C:\Qt\Tools\mingw1310_64\bin
+3. Собери проект:
+   ```bash
+   mkdir build
+   cd build
+   cmake .. -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=C:\Qt\6.9.0\mingw_64
+   cmake --build .
+4. Разверни зависимости Qt:
+   ```bash
+   C:\Qt\6.9.0\mingw_64\bin\windeployqt.exe bin\appTravelSurvey.exe
+5. Запусти:
+   ```bash
+   bin\appTravelSurvey.exe
 Замена путей: Используй свои пути к Qt и MinGW, если они отличаются.
 
 🚀 Использование
