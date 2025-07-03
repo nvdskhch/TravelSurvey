@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>HomePage.qml</file>
+        <file>SurveyPage.qml</file>
+        <file>ResultPage.qml</file>
+        <file>BookingPage.qml</file>
+        <file>TripsPage.qml</file>
+        <file>ManualBookingPage.qml</file>
+    </qresource>
+</RCC>
