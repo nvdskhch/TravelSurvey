@@ -1,5 +1,5 @@
 ```yaml
-name: Simplified CI/CD for TravelSurvey
+name: Deploy Static Site to GitHub Pages
 
 on:
   push:
@@ -10,29 +10,17 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18' # Измени на нужную версию, если требуется
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-        continue-on-error: true # Пропускаем, если нет скрипта build
-
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # Деплоим из корня репозитория
+          publish_dir: . # Деплоим файлы из корня репозитория
 ```
