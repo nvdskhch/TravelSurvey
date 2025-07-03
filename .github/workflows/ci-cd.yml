@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Явно указываем права на запись
+      pages: write # Права для GitHub Pages
+      id-token: write # Для аутентификации
 
     steps:
       - name: Checkout code
@@ -22,7 +26,7 @@ jobs:
       - name: Validate HTML files
         run: |
           find . -name "*.html" -exec tidy -q -e {} \;
-        continue-on-error: true # Продолжаем, даже если есть ошибки в HTML
+        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
